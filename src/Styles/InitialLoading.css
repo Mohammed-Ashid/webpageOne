@@ -1,0 +1,48 @@
+/* InitialLoading.css */
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Semi-transparent background */
+    z-index: 9999; /* Ensures it stays on top */
+    transition: transform 1s ease-out; /* Smooth transition for the animation */
+  }
+  
+  .loading-container.move-up {
+    transform: translateY(-100%); /* Move the loading screen up */
+  }
+  
+  .loading-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .loading-gif {
+    width: 50%; /* Default width */
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image does not distort */
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .loading-gif {
+      width: 50%; /* Smaller width on medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .loading-gif {
+      width: 50%; /* Even smaller width on smaller screens */
+    }
+  }
+  

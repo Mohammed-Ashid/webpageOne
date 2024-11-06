@@ -1,0 +1,118 @@
+/* Basic navbar styles */
+.navbar {
+    /* width:55vw; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color:tra;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    position: fixed;
+    z-index: 99999;
+    border-bottom: 0.2px solid  lightgrey;
+    gap:55px;
+  }
+  
+  /* Logo styling */
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Navigation links styling */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #666;
+  }
+  
+  /* Explore button styles */
+  .explore-button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left:-40px;
+    background-color: rgb(161, 255, 20);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: rgb(19, 19, 19);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .explore-button:hover {
+    background-color: rgb(192, 255, 20);
+  }
+  
+  .svgIcon {
+    height: 20px;
+    transition: transform 1s ease;
+  }
+  
+  .explore-button:hover .svgIcon {
+    transform: rotate(250deg);
+  }
+  
+  /* Hamburger menu icon styling */
+  .menu-icon {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      flex-direction: column;
+      background-color: #fff;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-links.open {
+      max-height: 300px; /* Adjust based on content */
+      padding: 10px 0;
+    }
+  
+    .nav-links a {
+      padding: 10px 20px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .menu-icon {
+      display: block;
+      color: #333;
+    }
+  
+    /* Hide logo and explore button if needed */
+    .explore-button {
+      order: 2;
+    }
+  }
+  

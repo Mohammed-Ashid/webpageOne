@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import { useState, useEffect } from 'react';
+import './App.css';
+import InitialLoading from './Components/InitialLoading';
+import IndexWeb from './Components/IndexWeb';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true); // Initially show the loading screen
+  const [showContent, setShowContent] = useState(false); // Control content visibility
+
+  useEffect(() => {
+    // Simulate a delay (e.g., 3 seconds for loading)
+    setTimeout(() => {
+      setLoading(false); // Hide loading screen
+      setShowContent(true); // Show other content after loading
+    }, 4000); // 3 seconds delay
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app-container">
+      {loading && <InitialLoading />} {/* Show loading screen while loading is true */}
+      {showContent && <IndexWeb />} {/* Show main content after loading */}
+    </div>
+  );
 }
 
-export default App
+export default App;

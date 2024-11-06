@@ -1,0 +1,151 @@
+/* Basic card styling */
+.card {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    
+}
+
+/* Scale the card on hover */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image container */
+.card-image {
+    overflow: hidden;
+    height: 200px;
+}
+
+/* Image styling and hover effect */
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-image:hover img {
+    transform: scale(1.1); /* Enlarge image on hover */
+}
+
+/* Content styling */
+.card-content {
+    padding: 20px;
+    background-color: #fff;
+    
+}
+
+.card-content h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-content p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Button container */
+.card-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Button styling */
+.card-btn {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn {
+    background-color: #4caf50; /* Green */
+    color: #fff;
+}
+
+.read-more-btn:hover {
+    background-color: #45a049;
+}
+
+.book-now-btn {
+    background-color: #007bff; /* Blue */
+    color: #000000;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 12px;
+    background-color: greenyellow;
+}
+
+.book-now-btn:hover {
+    background-color:  #45a049;
+}
+
+.icon {
+    margin-left: 5px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%; /* Make the card take full width on smaller screens */
+    }
+
+    .card-content {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .card-content h3 {
+        font-size: 1.2em; /* Smaller heading font size on smaller screens */
+    }
+
+    .card-content p {
+        font-size: 0.9em; /* Smaller paragraph font size */
+    }
+
+    .card-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+
+    .card-btn {
+        width: 100%; /* Make buttons take full width */
+        text-align: center;
+        padding: 8px 10px;
+    }
+  
+}
+
+@media (max-width: 480px) {
+    .card-image {
+        height: 150px; /* Reduce image height on very small screens */
+    }
+
+    .card-content {
+        padding: 10px;
+    }
+
+    .card-content h3 {
+        font-size: 1em; /* Smaller heading font size */
+    }
+
+    .card-content p {
+        font-size: 0.85em; /* Smaller paragraph font size */
+    }
+   
+}

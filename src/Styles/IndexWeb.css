@@ -1,0 +1,49 @@
+    .main{
+        width: 100%;
+        /* padding:2px; */
+       
+    }
+    .secondDiv {
+        height: auto; /* Full viewport height */
+        background-image: 
+            linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%), 
+            url('Images/gustavo-a-perez-mIblcb-GrhE-unsplash.jpg'); 
+        background-repeat: no-repeat;
+        background-size: cover; /* Cover the entire div */
+        background-position: center; 
+        display: flex; /* Allow for alignment of child elements */
+        flex-direction: column; /* Stack child elements vertically */
+        justify-content: center; /* Center child elements vertically */
+        padding: 20px; /* Add padding for better spacing */
+    }
+    .upcomingHeading{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(70, 66, 66);
+        font-size:3rem;
+        width: 100%;
+        text-align: center;
+        
+       
+    }
+    
+    @media (max-width: 768px) { /* For tablets and smaller screens */
+        .secondDiv {
+            height: auto; /* Allow height to adjust based on content */
+            padding: 10px; /* Adjust padding for smaller screens */
+            width: 100%;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 480px) { /* For mobile devices */
+        .secondDiv {
+            padding: 5px; /* Further reduce padding for mobile */
+            background-image: 
+                linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%), 
+                url('/Images/gustavo-a-perez-mIblcb-GrhE-unsplash.jpg'); /* Ensure the background image is still there */
+        }
+        .secondDiv h4{
+            font-size: 1.5rem;
+        }
+    }
+    
