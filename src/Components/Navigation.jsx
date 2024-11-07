@@ -10,8 +10,9 @@ function Navigation() {
   };
 
   return (
+    <div className='navbarDiv'>
     <nav className="navbar">
-      <div className="logo"><img src={logo} alt="" style={{width:"40px"}} /></div>
+      <div className="logo"><img src={logo} alt="" style={{width:"30px"}} /></div>
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -36,7 +37,7 @@ function Navigation() {
       <div className="menu-icon" onClick={toggleMenu}>
         &#9776; {/* Hamburger menu icon */}
       </div>
-    </nav>
+    </nav></div>
   );
 }
 

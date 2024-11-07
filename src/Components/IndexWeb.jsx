@@ -11,9 +11,9 @@ function IndexWeb() {
         <Navigation/>
         <First/>
         <Milestone/>
-        <div className='secondDiv'><h4 className='upcomingHeading'>UPCOMING TRIPS</h4>
+        <h4 className='upcomingHeading'>UPCOMING TRIPS</h4>
         <Gallery/>
-        </div><About/>
+        <About/>
       
     </div>
   )

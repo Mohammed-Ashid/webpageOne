@@ -1,11 +1,18 @@
 /* Gallery.css */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+    gap: 50px;
+   padding-top: 10px;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 30px;
     justify-items: center;
+   
+    position: relative;
+    
 }
+
 
 @media (max-width: 768px) {
     .card-container {
