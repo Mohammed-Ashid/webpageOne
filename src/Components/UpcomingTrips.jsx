@@ -13,13 +13,14 @@ function Gallery() {
   // Use the custom scroll animation hook
 
   return (
+    <div className='card-container-div'>
     <div className="card-container">
       <Card className='image1' imageUrl={img1} title="MEESHAPPULIMALA" description="This is a description for Sample Card 1." />
       <Card className='image2' imageUrl={img2} title="GAVI" description="This is a description for Sample Card 2." />
       <Card className='image3' imageUrl={img3} title="MANALI" description="This is a description for Sample Card 3." />
       <Card className='image4' imageUrl={img4} title="KAZAKISTHAN" description="This is a description for Sample Card 4." />
       <Card className='image5' imageUrl={img5} title="MANA" description="This is a description for Sample Card 5." />
-    </div>
+    </div></div>
   );
 }
 
