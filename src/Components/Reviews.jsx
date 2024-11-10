@@ -3,7 +3,7 @@ import ReviewComponent from './ReviewComponent';
 import reviewImg1 from '/Images/Screenshot_20240202-165344~2.png'; // Image paths
 import reviewImg2 from '/Images/Screenshot_20240202-165249~2.png';
 import reviewImg3 from '/Images/profile-pic 1.png';
-
+import '../Styles/Reviews.css'
 function Reviews() {
   const reviews = [
     {
@@ -34,7 +34,8 @@ function Reviews() {
   }, [reviews.length]);
 
   return (
-    <div className="ReviewsContainer">
+    <div className="Reviews-main-div">
+        <h1 className='Reviews-heading'>Trailblazers’ Stories</h1>
       <ReviewComponent
         key={reviews[currentReviewIndex].name}
         image={reviews[currentReviewIndex].image}

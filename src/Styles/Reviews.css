@@ -1,0 +1,15 @@
+.Reviews-main-div{
+    padding-top: 70px;
+}
+.Reviews-heading{
+    width: 100%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(70, 66, 66);
+    font-size:3rem;
+}
+@media (max-width: 768px) {
+    .Reviews-heading{
+        font-size: 1.5rem;
+    }
+}
