@@ -8,11 +8,12 @@ function ReviewComponent({ image, name, comment }) {
       <div className='ReviewBox'>
         <div className='ReviewImage'>
           <img src={image} alt="" />
+          <CustomizedRating />
         </div>
         <div className='ReviewComment'>
           <h1>{name}</h1>
           <p>{comment}</p>
-          <CustomizedRating />
+          
         </div>
       </div>
     </div>
