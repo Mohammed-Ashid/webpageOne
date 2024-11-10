@@ -1,33 +1,19 @@
-.ReviewComponent-main-div{
-    height:auto;
-    width:100%;
+.ReviewComponent-main-div {
+    height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: grey; */
     padding-top: 70px;
     padding-bottom: 70px;
-    transition: transform 1s ease;
-}
-/* For sliding the review in from the right */
-.slide-in {
-    transform: translateX(0);
+    position: relative;  /* Make sure it's positioned correctly */
+    opacity: 0; /* Start with hidden */
   }
   
-  /* For sliding the review out to the left */
-  .slide-out-left {
-    transform: translateX(-100%);
-  }
-  
-  /* For sliding the review in from the right */
-  .slide-out-right {
-    transform: translateX(100%);
-  }
-.ReviewBox{
-    width:40%;
-    height:100%;
-    /* background-color: red; */
+  .ReviewBox {
+    width: 40%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,60 +22,56 @@
     padding-top: 30px;
     box-shadow: 0px 0px 8px grey;
     border-radius: 12px;
-}
-.ReviewImage{
-    width:90%;
-    /* background-color: aqua; */
+  }
+  
+  .ReviewImage {
+    width: 90%;
     display: flex;
     align-items: flex-end;
     gap: 20px;
-}
-.ReviewImage img{
-    height:5vw;
+  }
+  
+  .ReviewImage img {
+    height: 5vw;
     border-radius: 100px;
-}
-.ReviewComment {
-   
+  }
+  
+  .ReviewComment {
     right: 40px;
-    height: auto;
-    width: 90%; 
+    width: 90%;
     background-color: white;
-    padding-top: 0;
-    /* padding-left: 20px; */
     padding-bottom: 30px;
-     overflow: hidden;
-}
-.ReviewComment h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif0;
-}
-.ReviewComment p{
+    overflow: hidden;
+  }
+  
+  .ReviewComment h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .ReviewComment p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: grey;
-}
-@media (max-width: 768px) {
-    .ReviewComponent-main-div{
-        
-        justify-content: flex-start;
-        padding-bottom: 0;
-        padding: 30px;
-        width: 85%;
-        
-        
+  }
+  
+  @media (max-width: 768px) {
+    .ReviewComponent-main-div {
+      justify-content: flex-start;
+      padding: 30px;
+      width: 85%;
     }
-    .ReviewBox{
-        width:80%;
-       padding-top: 0px;
+    .ReviewBox {
+      width: 80%;
+      padding-top: 0px;
     }
-
-
-
+  
     .ReviewImage img {
-        height: 10vw; /* Larger image size for smaller screens */
+      height: 10vw; /* Larger image size for smaller screens */
     }
-    .ReviewComment h1{
-        font-size: medium;
+    .ReviewComment h1 {
+      font-size: medium;
     }
-    .ReviewComment p{
-        font-size: small;
+    .ReviewComment p {
+      font-size: small;
     }
-}
+  }
+  
