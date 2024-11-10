@@ -1,77 +1,86 @@
-.Reviews-main-div{
-    padding-top: 70px;
-    padding-bottom: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Add this line */
-    overflow: hidden; /* Add this line to hide overflow */
-   
-    
-}
-.Reviews-heading{
-    width: 100%;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(70, 66, 66);
-    font-size:3rem;
-}
-@media (max-width: 768px) {
-    .Reviews-main-div{
-        padding-top: 40px;
-    }
-    .Reviews-heading{
-        font-size: 1.5rem;
-    }
-}
-/* Reviews.css */
+/* Main container */
 .Reviews-main-div {
-    padding-top: 70px;
-    padding-bottom: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Keeps reviews inside this container */
+  overflow: hidden; /* Hide overflow when sliding */
+}
+
+/* Heading */
+.Reviews-heading {
+  width: 100%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(70, 66, 66);
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+/* Slide in animation */
+.slide-in {
+  animation: slideInFromRight 2s ease forwards;
+}
+
+/* Slide out animation */
+.slide-out {
+  animation: slideOutToLeft 2s ease forwards;
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInFromRight {
+  from {
+      transform: translateX(100%); /* Start from outside the screen */
+      opacity: 0;
   }
-  
+  to {
+      transform: translateX(0); /* End in the normal position */
+      opacity: 1;
+  }
+}
+
+/* Keyframes for sliding out to the left */
+@keyframes slideOutToLeft {
+  from {
+      transform: translateX(0); /* Start from the normal position */
+      opacity: 1;
+  }
+  to {
+      transform: translateX(-100%); /* Move out to the left */
+      opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .Reviews-heading {
-    text-align: center;
-    margin-bottom: 30px;
+      font-size: 1.5rem;
   }
-  
-  .slide-in {
-    
-    animation: slideInFromRight 1s ease forwards;
-  }
-  
-  .slide-out {
-    animation: slideOutToLeft 1s ease forwards;
-  }
-  
+
+  /* Slide-in animation for mobile */
   @keyframes slideInFromRight {
-    from {
-        position:absolute;
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+      from {
+          transform: translateX(100%);
+          opacity: 0;
+      }
+      to {
+          transform: translateX(0);
+          opacity: 1;
+      }
   }
-  
+
+  /* Slide-out animation for mobile */
   @keyframes slideOutToLeft {
-    from {
-        /* position: absolute; */
-      transform: translateX(0%);
-      opacity: 1;
-    }
-    to {
-        /* position: absolute; */
-      transform: translateX(-100%);
-      opacity: 0;
-    }
+      from {
+          transform: translateX(0);
+          opacity: 1;
+      }
+      to {
+          transform: translateX(-100%);
+          opacity: 0;
+      }
   }
-  
+}

@@ -31,7 +31,7 @@ function Reviews() {
     const interval = setInterval(() => {
       setPreviousReviewIndex(currentReviewIndex);
       setCurrentReviewIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 3000); // Change review every 3 seconds
+    }, 5000); // Change review every 3 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, [currentReviewIndex]);
