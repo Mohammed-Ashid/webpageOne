@@ -7,7 +7,22 @@
     /* background-color: grey; */
     padding-top: 70px;
     padding-bottom: 70px;
+    transition: transform 1s ease;
 }
+/* For sliding the review in from the right */
+.slide-in {
+    transform: translateX(0);
+  }
+  
+  /* For sliding the review out to the left */
+  .slide-out-left {
+    transform: translateX(-100%);
+  }
+  
+  /* For sliding the review in from the right */
+  .slide-out-right {
+    transform: translateX(100%);
+  }
 .ReviewBox{
     width:40%;
     height:100%;

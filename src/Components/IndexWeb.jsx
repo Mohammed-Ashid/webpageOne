@@ -6,6 +6,7 @@ import About from './About'
 import Milestone from './Milestones'
 import Gallery from './UpcomingTrips'
 import ReviewComponent from './ReviewComponent'
+import Reviews from './Reviews'
 function IndexWeb() {
   return (
     <div className='main'>
@@ -15,7 +16,7 @@ function IndexWeb() {
         <h4 className='upcomingHeading'>UPCOMING TRIPS</h4>
         <Gallery/>
         <About/>
-        <ReviewComponent/>
+        <Reviews/>
       
     </div>
   )

@@ -1,22 +1,22 @@
-import React from 'react'
-import '../Styles/ReviewComponent.css'
-import reviewImg1 from '/Images/Screenshot_20240202-165344~2.png'
-import CustomizedRating from './CustomizedRating'
-function ReviewComponent() {
+import React from 'react';
+import '../Styles/ReviewComponent.css';
+import CustomizedRating from './CustomizedRating';
+
+function ReviewComponent({ image, name, comment }) {
   return (
     <div className='ReviewComponent-main-div'>
-        <div className='ReviewBox'>
-            <div className='ReviewImage'>
-                <img src={reviewImg1} alt=""/>
-            </div>
-            <div className='ReviewComment'>
-<h1>Fathima Beevi P s</h1>
-<p>Great experince</p>
-<CustomizedRating/>
-            </div>
+      <div className='ReviewBox'>
+        <div className='ReviewImage'>
+          <img src={image} alt="" />
         </div>
+        <div className='ReviewComment'>
+          <h1>{name}</h1>
+          <p>{comment}</p>
+          <CustomizedRating />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default ReviewComponent
+export default ReviewComponent;
