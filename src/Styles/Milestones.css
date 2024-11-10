@@ -9,6 +9,12 @@
     color: #333; /* Dark text color for contrast */
     text-align: center;
     min-height: 40%; /* Minimum height to occupy 80% of the viewport */
+    background: linear-gradient(
+      180deg,
+      rgba(255, 247, 1, 0.469),
+      rgba(199, 182, 28, 0.31),
+      rgba(0, 0, 0, 0)
+  );
   }
   
   .milestone-title {

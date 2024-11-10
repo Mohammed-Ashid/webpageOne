@@ -2,31 +2,34 @@
     display: flex;
     align-items: center; 
     justify-content: center;   
-    height: 50%;
+    height: 100%;
     overflow: hidden;
     padding: 0;
     margin: 0;
     position: relative;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 247, 1, 0.587),
+        rgba(199, 182, 28, 0.362),
+        rgba(0, 0, 0, 0.019)
+    );
 }
 
 
 
 
 
-.image-stack.fade-in-images .stack-image {
-    opacity: 1; /* Fully visible when in view */
-    transform: translateY(0) scale(); /* Move to the normal position */
-}
+
 
 
 
 .about-content {
     width: 35vw;
     padding: 2vw;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
+    background: transparent; /* Semi-transparent background for readability */
     color: #333;
     border-radius: 8px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    height: 100%;
     opacity: 0; /* Start as invisible */
     transform: translateY(20px); /* Start position for animation */
     transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */

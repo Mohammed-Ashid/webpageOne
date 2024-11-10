@@ -1,13 +1,20 @@
 .card-container-div{
-    margin-left:20%;
-    margin-right:20%;
-  
+    padding-left:20%;
+    padding-right:20%;
+    /* background: linear-gradient(
+        360deg,
+        rgba(255, 247, 1, 0.501),
+        rgba(199, 182, 28, 0.362),
+        rgba(0, 0, 0, 0)
+    ); */
+    background-color:white;
+    padding-bottom: 30px;
 }
 
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-items: center;
@@ -17,10 +24,10 @@
 @media (max-width: 768px) {
     .card-container {
         padding: 10px;
-        gap: 15px;
+        gap: 25px;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
     .card-container-div{
-        margin:0;
+       padding:0px;
     }
 }
