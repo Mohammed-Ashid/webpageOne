@@ -13,54 +13,33 @@
     height:100%;
     /* background-color: red; */
     display: flex;
+    padding: 0;
 }
 .ReviewImage{
     width:20%;
-    height: 100%;
     /* background-color: aqua; */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 120px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* padding-top: 120px; */
 }
 .ReviewImage img{
     height:5vw;
     border-radius: 100px;
 }
 .ReviewComment {
-    position: relative;
-    top: 20px;
+    margin-top: 20px;
     right: 40px;
-    height: 7vw;
-    width: 80%; /* Adjust the width as needed */
+    height: 50%;
+    width: 80%; 
     background-color: white;
     box-shadow: 0px 0px 7px grey;
-    padding: 30px;
+    padding-top: 0;
+    padding-left: 20px;
+    padding-bottom: 30px;
     border-radius: 12px 12px 12px 0px;
-    overflow: auto;
+    overflow: hidden;
 }
-
-/* .ReviewComment::before {
-    content: '';
-   
-    position: absolute;
-    bottom: 1px;
-    left: 15px; 
-    border: 15px solid transparent; 
-    border-top-color: rgb(255, 255, 255);
-    transform: translateY(100%) translateX(-50%);
-}
-
-.ReviewComment::after {
-    content: '';
-    position: absolute;
-    bottom: -1px; 
-    left: 15px; 
-    border: 15px solid transparent;
-    border-top-color: rgba(96, 83, 83, 0.404); 
-    transform: translateY(100%) translateX(-50%);
-    z-index: -1; 
-} */
 .ReviewComment h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif0;
 }
@@ -72,17 +51,22 @@
     .ReviewComponent-main-div{
         position: relative;
         justify-content: flex-start;
+        padding-bottom: 0;
+        padding-left: 30px;
+        
     }
     .ReviewBox{
-        width:100%;
+        width:80%;
         height:100%;
         display: flex;
     }
 
     .ReviewImage {
-        padding-top: 0;
-        width: 50%; /* Adjust width of image container */
+        /* padding-top: 0; */
+        width: 13%; /* Adjust width of image container */
         height: auto;
+        margin-bottom: 70px;
+        justify-content: normal;
     }
 
     .ReviewImage img {
@@ -93,8 +77,9 @@
         width: 100%; /* Full width for small screens */
         top: 30px;
         right: 30;
-        height:80px;
+        height:130px;
         padding: 07px;
+        margin-top: 50px;
     }
     .ReviewComment h1{
         font-size: medium;
