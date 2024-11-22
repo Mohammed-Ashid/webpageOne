@@ -16,6 +16,10 @@
             width: 100%;
             text-align: center;
         }
+        .upcomingHeading{
+            font-size: 1.5rem; /* Subtitle font size */
+           
+        }
     }
     
     @media (max-width: 480px) { /* For mobile devices */
