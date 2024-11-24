@@ -15,8 +15,8 @@ const GalleryData = [
 function GalleryPreview() {
   const sliderSettings = {
     infinite: true,
-    speed: 5000, // Smooth transition speed
-    slidesToShow: 5, // Adjust based on screen size
+    speed: 7000, // Smooth transition speed
+    slidesToShow: 4, // Adjust based on screen size
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0, // Seamless scrolling
@@ -27,9 +27,6 @@ function GalleryPreview() {
 
   return (
     <div className="companies-section">
-      <Typography variant="h4" align="center" gutterBottom>
-        Gallery
-      </Typography>
       <Slider {...sliderSettings} className="companies-slider">
         {GalleryData.map((company, index) => (
           <Box className="company-logo" key={index}>

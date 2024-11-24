@@ -1,4 +1,8 @@
 /* Basic navbar styles */
+html {
+  scroll-behavior: smooth;
+}
+
 .navbarDiv{
   width: 100%;
   display: flex;
@@ -112,7 +116,7 @@
     }
   
     .nav-links.open {
-      max-height: 300px; /* Adjust based on content */
+      max-height: 400px; /* Adjust based on content */
       padding: 10px 0;
     }
   

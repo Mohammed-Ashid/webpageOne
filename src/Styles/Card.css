@@ -86,15 +86,16 @@
 
 .book-now-btn {
     background-color: #007bff; /* Blue */
-    color: #000000;
+    color: #333;
     width: 8rem;
     height: 3rem;
     border-radius: 12px;
-    background-color: greenyellow;
+    background-color:transparent;
 }
 
 .book-now-btn:hover {
-    background-color:  yellow;
+    background-color:  black;
+    color: white;
 }
 
 .icon {
