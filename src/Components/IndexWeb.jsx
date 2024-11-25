@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Primary from './Primary';
 import AboutDetail from './AboutDetail';
 import GalleryDetails from './GalleryDetails'
+import TripDetails from './TripDetails';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Primary />} />
             <Route path="/about-detail" element={<AboutDetail />} />
             <Route path="/Gallery-details" element={<GalleryDetails/>} />
+            <Route path="/trip-details/:title" element={<TripDetails/>} />
           </Routes>
         </div>
         <section id="footer">
