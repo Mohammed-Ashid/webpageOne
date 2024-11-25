@@ -58,7 +58,7 @@
   @media screen and (max-width: 768px) {
     .company-image {
       
-      max-height: 100px; /* Further reduce size for smaller screens */
+      max-height: 500px; /* Further reduce size for smaller screens */
     }
   }
   

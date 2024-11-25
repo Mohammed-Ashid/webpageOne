@@ -17,6 +17,7 @@ function GalleryPreview() {
   const navigate=useNavigate();
 const handlemoreButtonClick = () =>{
 navigate('/Gallery-details');
+window.scrollTo(0, 0);
 }
   const sliderSettings = {
     infinite: true,
@@ -28,6 +29,15 @@ navigate('/Gallery-details');
     cssEase: "linear",
     rtl: true, // Reverse direction (left to right)
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 768, // Screen width less than or equal to 768px
+        settings: {
+          slidesToShow: 1, // Show 1 slide on mobile
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
