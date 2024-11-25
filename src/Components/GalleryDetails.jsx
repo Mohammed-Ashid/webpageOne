@@ -66,6 +66,7 @@ const GalleryDetails = () => {
 
   return (
     <div className="gallery-container">
+       
       {collections.map((collection, index) => (
         <div
           key={index}

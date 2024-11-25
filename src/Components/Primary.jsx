@@ -71,6 +71,7 @@ function Primary() {
 
               {/* About Section */}
               <section id="about">
+              <h4 className="upcomingHeading">ABOUT US</h4>
                 <About />
               </section>
 

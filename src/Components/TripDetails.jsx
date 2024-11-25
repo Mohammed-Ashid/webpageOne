@@ -56,6 +56,7 @@ const TripDetails = () => {
 
   return (
     <div className="trip-details">
+        <div style={{marginTop:"70px"}}></div>
       {/* Title */}
       <h1 className="trip-title">{trip.title}</h1>
 
