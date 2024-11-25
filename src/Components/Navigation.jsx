@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/Navigation.css';
 import logo from "/Images/Hiker_india_Logo_-removebg-preview.png";
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,13 +18,13 @@ function Navigation() {
         </div>
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {/* Links to sections using #id */}
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#trip">Trip</a></li>
-          <li><a href="#upcoming-trips">Upcoming Trips</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><Link to="/#home">Home</Link></li>
+          <li> <Link to="/#about">About</Link></li>
+          <li><Link to="/#gallery">Gallery</Link></li>
+          <li><Link to="/#trip">Trip</Link></li>
+          <li><Link to="/#upcoming-trips">Upcoming Trips</Link></li>
+          <li><Link to="/#blog">Blog</Link></li>
+          <li><Link to="/#contact">Contact Us</Link></li>
         </ul>
         <button className="explore-button">
           <svg

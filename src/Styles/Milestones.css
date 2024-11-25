@@ -11,9 +11,9 @@
     min-height: 40%; /* Minimum height to occupy 80% of the viewport */
     background: linear-gradient(
       180deg,
-      rgba(255, 247, 1, 0.469),
-      rgba(199, 182, 28, 0.31),
-      rgba(0, 0, 0, 0)
+      rgb(255, 255, 255),
+      rgba(238, 237, 237, 0.905),
+      #f4f4f4,
   );
   }
   

@@ -85,7 +85,7 @@
 }
 
 .book-now-btn {
-    background-color: #007bff; /* Blue */
+    border:.5px dashed lightgrey;
     color: #333;
     width: 8rem;
     height: 3rem;

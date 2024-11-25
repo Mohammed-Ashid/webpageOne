@@ -22,7 +22,7 @@
   .company-image {
     max-width: 100%;
     height: auto; /* Maintain aspect ratio */
-    max-height: 200px; /* Default size for larger screens */
+    max-height: 400px; /* Default size for larger screens */
     transition: transform 0.3s ease;
   }
   
@@ -33,6 +33,19 @@
   .slick-track {
     display: flex;
     align-items: center;
+  }
+  .companies-section button{
+    background-color: black;
+    color:white;
+    border-radius: 50px;
+    width: 85px;
+    height:30px;
+    font-size: medium;
+  }
+  .companies-section button:hover{
+    background-color: transparent;
+    color:black;
+   
   }
   
   /* Responsive adjustments */

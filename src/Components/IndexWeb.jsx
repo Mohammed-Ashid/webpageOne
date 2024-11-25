@@ -1,27 +1,31 @@
 import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Navigation from './Navigation';
-import '../Styles/IndexWeb.css';
 import Footer from './Footer';
 import Primary from './Primary';
 import AboutDetail from './AboutDetail';
+import GalleryDetails from './GalleryDetails'
 
-import GalleryDetails from './GalleryDetails';
-
-function IndexWeb() {
+function App() {
   return (
-    <div className="main">
-      <Navigation />
-      <div className="routingBody">
-      <Primary/>
-      <AboutDetail/>
-      <GalleryDetails/>
-      </div>
-              {/* Footer Section */}
-              <section id="footer">
+    <Router>
+      <div className="main">
+        <Navigation />
+        <div className="routingBody">
+          <Routes>
+            {/* Define routes for sections */}
+            <Route path="/" element={<Primary />} />
+            <Route path="/about-detail" element={<AboutDetail />} />
+            <Route path="/Gallery-details" element={<GalleryDetails/>} />
+          </Routes>
+        </div>
+        <section id="footer">
           <Footer />
         </section>
-    </div>
+      </div>
+    </Router>
   );
 }
 
-export default IndexWeb;
+export default App;

@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { Box, Typography, CardMedia } from "@mui/material";
 import "../Styles/GalleryPreview.css"; // CSS for styles.
+import { useNavigate } from "react-router-dom";
 
 const GalleryData = [
   { name: "Company 1", logo: "Images/photo-1464547323744-4edd0cd0c746.jpeg" },
@@ -13,10 +14,14 @@ const GalleryData = [
 ];
 
 function GalleryPreview() {
+  const navigate=useNavigate();
+const handlemoreButtonClick = () =>{
+navigate('/Gallery-details');
+}
   const sliderSettings = {
     infinite: true,
     speed: 7000, // Smooth transition speed
-    slidesToShow: 4, // Adjust based on screen size
+    slidesToShow: 3, // Adjust based on screen size
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0, // Seamless scrolling
@@ -39,7 +44,7 @@ function GalleryPreview() {
           </Box>
         ))}
       </Slider>
-      <button>more</button>
+      <button onClick={handlemoreButtonClick}>more</button>
     </div>
   );
 }

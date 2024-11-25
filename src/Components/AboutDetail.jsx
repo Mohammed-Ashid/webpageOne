@@ -8,6 +8,7 @@ import teamImage from '/Images/photo-1464547323744-4edd0cd0c746.jpeg';
 const AboutDetail = () => {
   return (
     <div className="about-page-container">
+      <h1>ABOUT US</h1>
       {/* Vision Section */}
       <section className="section vision-section">
         <div className="section-content-vision">
