@@ -1,4 +1,6 @@
-  
+  .main{
+    background-color: #f4f4f4;
+  }
     .upcomingHeading{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: rgb(70, 66, 66);

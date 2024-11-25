@@ -5,6 +5,8 @@ import Footer from './Footer';
 import Primary from './Primary';
 import AboutDetail from './AboutDetail';
 
+import GalleryDetails from './GalleryDetails';
+
 function IndexWeb() {
   return (
     <div className="main">
@@ -12,6 +14,7 @@ function IndexWeb() {
       <div className="routingBody">
       <Primary/>
       <AboutDetail/>
+      <GalleryDetails/>
       </div>
               {/* Footer Section */}
               <section id="footer">
