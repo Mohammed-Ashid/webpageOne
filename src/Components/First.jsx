@@ -2,44 +2,33 @@ import React, { useState, useEffect } from 'react';
 import '../Styles/First.css';
 import { FaHiking } from 'react-icons/fa';
 
-import image1Desktop from '/Images/boat-4899802_1280.jpg'
-import image2Desktop from '/Images/photo-1464547323744-4edd0cd0c746.jpeg'
-import image3Desktop from '/Images/boat-4899802_1280.jpg'
-
-import image1Mobile from '/Images/pexels-m-venter-792254-1659438.jpg'
-import image2Mobile from '/Images/pexels-sebastian-palomino-933481-1875480.jpg'
-import image3Mobile from '/Images/pexels-julieaagaard-1374064.jpg'
-
-const slides = [
-  {
-    desktopImage: image1Desktop,
-    mobileImage: image1Mobile,
-    text: "LET'S HIKE WITH HIKER INDIA",
-  },
-  {
-    desktopImage: image2Desktop,
-    mobileImage: image2Mobile,
-    text: "EXPERIENCE THE ADVENTURE OF A LIFETIME",
-  },
-  {
-    desktopImage: image3Desktop,
-    mobileImage: image3Mobile,
-    text: "JOIN US FOR UNFORGETTABLE TRAILS",
-  }
-];
-
 function First() {
+  // Load slides from environment variables
+  const slides = [
+    {
+      desktopImage: import.meta.env.VITE_SLIDE1_DESKTOP_IMAGE,
+      mobileImage: import.meta.env.VITE_SLIDE1_MOBILE_IMAGE,
+      text: import.meta.env.VITE_SLIDE1_TEXT,
+    },
+    {
+      desktopImage: import.meta.env.VITE_SLIDE2_DESKTOP_IMAGE,
+      mobileImage: import.meta.env.VITE_SLIDE2_MOBILE_IMAGE,
+      text: import.meta.env.VITE_SLIDE2_TEXT,
+    },
+    {
+      desktopImage: import.meta.env.VITE_SLIDE3_DESKTOP_IMAGE,
+      mobileImage: import.meta.env.VITE_SLIDE3_MOBILE_IMAGE,
+      text: import.meta.env.VITE_SLIDE3_TEXT,
+    },
+  ];
+
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [fade, setFade] = useState(true); // Start with fade set to true
+  const [fade, setFade] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   // Handle device screen size change
   const checkIfMobile = () => {
-    if (window.innerWidth <= 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
+    setIsMobile(window.innerWidth <= 768);
   };
 
   useEffect(() => {
@@ -66,9 +55,9 @@ function First() {
 
   return (
     <div
-      className={`background ${fade ? 'fade-in' : ''}`} // Apply fade-in class initially
+      className={`background ${fade ? 'fade-in' : ''}`}
       style={{
-        backgroundImage: `url(${isMobile ? slides[currentSlide].mobileImage : slides[currentSlide].desktopImage})`, // Use mobile or desktop image based on screen size
+        backgroundImage: `url(${isMobile ? slides[currentSlide].mobileImage : slides[currentSlide].desktopImage})`,
       }}
     >
       <div className={`content-first ${fade ? 'fade-in' : ''}`}>

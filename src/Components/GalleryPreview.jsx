@@ -1,24 +1,26 @@
 import React from "react";
 import Slider from "react-slick";
-import { Box, Typography, CardMedia } from "@mui/material";
+import { Box, CardMedia } from "@mui/material";
 import "../Styles/GalleryPreview.css"; // CSS for styles.
 import { useNavigate } from "react-router-dom";
 
-const GalleryData = [
-  { name: "Company 1", logo: "Images/photo-1464547323744-4edd0cd0c746.jpeg" },
-  { name: "Company 2", logo: "Images/photo-1464547323744-4edd0cd0c746.jpeg" },
-  { name: "Company 3", logo: "Images/photo-1464547323744-4edd0cd0c746.jpeg" },
-  { name: "Company 4", logo: "Images/photo-1464547323744-4edd0cd0c746.jpeg" },
-  { name: "Company 5", logo: "Images/photo-1464547323744-4edd0cd0c746.jpeg" },
-  // Add more companies here...
-];
-
 function GalleryPreview() {
-  const navigate=useNavigate();
-const handlemoreButtonClick = () =>{
-navigate('/Gallery-details');
-window.scrollTo(0, 0);
-}
+  const navigate = useNavigate();
+
+  const handleMoreButtonClick = () => {
+    navigate('/Gallery-details');
+    window.scrollTo(0, 0);
+  };
+
+  // Define the gallery data using environment variables
+  const GalleryData = [
+    { name: "Company 1", logo: import.meta.env.VITE_COMPANY1_LOGO },
+    { name: "Company 2", logo: import.meta.env.VITE_COMPANY2_LOGO },
+    { name: "Company 3", logo: import.meta.env.VITE_COMPANY3_LOGO },
+    { name: "Company 4", logo: import.meta.env.VITE_COMPANY4_LOGO },
+    { name: "Company 5", logo: import.meta.env.VITE_COMPANY5_LOGO },
+  ];
+
   const sliderSettings = {
     infinite: true,
     speed: 7000, // Smooth transition speed
@@ -54,7 +56,7 @@ window.scrollTo(0, 0);
           </Box>
         ))}
       </Slider>
-      <button onClick={handlemoreButtonClick}>more</button>
+      <button onClick={handleMoreButtonClick}>more</button>
     </div>
   );
 }

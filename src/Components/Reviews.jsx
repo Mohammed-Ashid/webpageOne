@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import ReviewComponent from './ReviewComponent';
-import reviewImg1 from '/Images/Screenshot_20240202-165344~2.png'; // Image paths
-import reviewImg2 from '/Images/Screenshot_20240202-165249~2.png';
-import reviewImg3 from '/Images/profile-pic 1.png';
 import '../Styles/Reviews.css';
 
 function Reviews() {
+  // Load reviews from environment variables
   const reviews = [
     {
-      image: reviewImg1,
-      name: 'Fathima Beevi P s',
-      comment: 'Great experience',
+      image: import.meta.env.VITE_REVIEW1_IMAGE,
+      name: import.meta.env.VITE_REVIEW1_NAME,
+      comment: import.meta.env.VITE_REVIEW1_COMMENT,
     },
     {
-      image: reviewImg2,
-      name: 'Fathima Zubair',
-      comment: 'One of the best parts of my life.',
+      image: import.meta.env.VITE_REVIEW2_IMAGE,
+      name: import.meta.env.VITE_REVIEW2_NAME,
+      comment: import.meta.env.VITE_REVIEW2_COMMENT,
     },
     {
-      image: reviewImg3,
-      name: 'Mohammed Ashid',
-      comment: 'Will come again. One-time life experience, must visit Camp',
+      image: import.meta.env.VITE_REVIEW3_IMAGE,
+      name: import.meta.env.VITE_REVIEW3_NAME,
+      comment: import.meta.env.VITE_REVIEW3_COMMENT,
     },
   ];
 
@@ -31,7 +29,7 @@ function Reviews() {
     const interval = setInterval(() => {
       setPreviousReviewIndex(currentReviewIndex);
       setCurrentReviewIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 5000); // Change review every 3 seconds
+    }, 5000); // Change review every 5 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, [currentReviewIndex]);

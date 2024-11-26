@@ -1,56 +1,55 @@
 import React, { useState } from "react";
-import "../Styles/GalleryDetails.css"
+import "../Styles/GalleryDetails.css";
 
 const GalleryDetails = () => {
   const [selectedCollection, setSelectedCollection] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Dynamically fetch image paths from .env
+  const image1 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_1;
+  const image2 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_2;
+  const image3 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_3;
+  const image4 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_4;
+  const image5 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_1;
+  const image6 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_2;
+  const image7 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_3;
+  const image8 = import.meta.env.VITE_Galler_Deatils_M_IMAGE_4;
+
+
+  const gimage1 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_1;
+  const gimage2 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_2;
+  const gimage3 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_3;
+  const gimage4 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_4;
+  const gimage5 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_1;
+  const gimage6 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_2;
+  const gimage7 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_3;
+  const gimage8 = import.meta.env.VITE_Galler_Deatils_G_IMAGE_4;
+
+  const kimage1 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_1;
+  const kimage2 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_2;
+  const kimage3 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_3;
+  const kimage4 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_4;
+  const kimage5 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_1;
+  const kimage6 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_2;
+  const kimage7 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_3;
+  const kimage8 = import.meta.env.VITE_Galler_Deatils_K_IMAGE_4;
+
   // Sample data for image collections
   const collections = [
     {
       title: "Meeshappulimala",
-      images: [
-       'Images/pexels-julieaagaard-1374064.jpg',
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-      ],
-      moreImages: [
-        'Images/pexels-julieaagaard-1374064.jpg',
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-      ],
+      images: [image1, image2, image3, image4],
+      moreImages: [image5, image6, image7, image8],
     },
     {
       title: "Gavi",
-      images: [
-        'Images/pexels-julieaagaard-1374064.jpg',
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-      ],
-      moreImages: [
-        'Images/pexels-julieaagaard-1374064.jpg',
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-      ],
+      images: [gimage1, gimage2, gimage3, gimage4],
+      moreImages: [gimage5, gimage6, gimage7, gimage8],
     },
     {
       title: "Kazakisthan",
-      images: [
-        'Images/pexels-julieaagaard-1374064.jpg',
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-      ],
-      moreImages: [
-        'Images/pexels-julieaagaard-1374064.jpg',
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-        "Images/pexels-julieaagaard-1374064.jpg",
-      ],
+      images: [kimage1, kimage2, kimage3, kimage4],
+      moreImages: [kimage5, kimage6, kimage7, kimage8],
     },
   ];
 
@@ -66,7 +65,6 @@ const GalleryDetails = () => {
 
   return (
     <div className="gallery-container">
-       
       {collections.map((collection, index) => (
         <div
           key={index}
