@@ -43,8 +43,8 @@ function First() {
       setTimeout(() => {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
         setFade(true); // Fade-in the new slide
-      }, 500);
-    }, 3000);
+      }, 3000);
+    }, 7000);
 
     return () => {
       // Cleanup event listener

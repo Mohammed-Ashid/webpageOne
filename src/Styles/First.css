@@ -7,7 +7,23 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    transition: background-image 1s ease-in-out;
+    overflow: hidden;
+    animation: ripple-effect 4s ease-in-out forwards;
+}
+
+@keyframes ripple-effect {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
 }
 
 .content-first {
@@ -18,32 +34,59 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(
-        90deg, 
-        rgba(0, 0, 0, 0.409), 
-        rgba(0, 0, 0, 0.178), rgba(0, 0, 0, 0)
+        90deg,
+        rgba(0, 0, 0, 0.409),
+        rgba(0, 0, 0, 0.178),
+        rgba(0, 0, 0, 0)
     );
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease-in-out;
+    transform: translateY(100%);
+    opacity: 0;
+    animation: rise-up 1.3s ease-out forwards;
 }
 
-/* Apply fade-in effect */
+@keyframes rise-up {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .fade-in {
-    opacity: 1;
+    animation: fade-in 1s ease forwards;
 }
 
-/* Heading style */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .btn-shine {
     padding: 12px 0;
-    font-size: 50px;
+    font-size: 90px;
     color: white;
     line-height: 1.2;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 90px;
     border-radius: 25px;
-    transition: opacity 1s ease-in-out; /* Only opacity transition for fade effect */
+    animation: shine-text 2s infinite ease-in-out alternate;
 }
 
-/* Button style without transition */
+@keyframes shine-text {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
 .glow-button {
     --glow-color: rgb(217, 176, 255);
     --glow-spread-color: rgba(191, 123, 255, 0.781);
@@ -56,42 +99,36 @@
     font-weight: bold;
     background-color: var(--btn-color);
     border-radius: 1em;
-    box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
     text-shadow: 0 0 0.5em var(--glow-color);
     display: flex;
     align-items: center;
     gap: 0.5em;
     position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fade-in-button 2s ease-in forwards;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .btn-shine {
-        font-size: 40px;
-        padding:10px
+@keyframes fade-in-button {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
     }
-    
-    .glow-button {
-        padding: 0.6em 1.5em;
-        font-size: 0.9rem;
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
-
-@media (max-width: 480px) {
-    .btn-shine {
-        font-size: 40px;
-    }
-    
-    .glow-button {
-        padding: 0.5em 1.2em;
-        font-size: 0.8rem;
-    }
-}
-
 
 .glow-button:hover {
     color: var(--btn-color);
     background-color: var(--glow-color);
-    box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
-    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
