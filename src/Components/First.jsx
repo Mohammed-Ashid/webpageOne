@@ -44,7 +44,7 @@ function First() {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
         setFade(true); // Fade-in the new slide
       }, 3000);
-    }, 7000);
+    }, 4000);
 
     return () => {
       // Cleanup event listener
