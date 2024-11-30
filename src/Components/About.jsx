@@ -30,7 +30,7 @@ const About = () => {
       <div className="about-content">
         
         <p>
-          Welcome to my profile! With a background in [Your Field/Expertise], I have a deep passion
+          Welcome to my profile!! With a background in [Your Field/Expertise], I have a deep passion
           for [something related to your expertise or field]. I believe in continuous learning and
           growth, constantly working to improve my skills and contribute effectively to any project I
           undertake.
