@@ -64,7 +64,7 @@
   
   @media screen and (max-width: 480px) {
     .company-image {
-      max-height: 30px; /* Adapt size for mobile devices */
+      max-height: 300px; /* Adapt size for mobile devices */
     }
   
     .companies-section {

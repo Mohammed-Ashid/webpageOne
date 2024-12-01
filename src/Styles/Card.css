@@ -105,27 +105,27 @@
 /* Responsive styling */
 @media (max-width: 768px) {
     .card {
-        max-width: 100%; /* Make the card take full width on smaller screens */
+        max-width: 100%; 
     }
 
     .card-content {
-        padding: 15px; /* Reduce padding on smaller screens */
+        padding: 10px; 
     }
 
     .card-content h3 {
-        font-size: 1.2em; /* Smaller heading font size on smaller screens */
+        font-size: 1.1em; 
     }
 
     .card-content p {
-        font-size: 0.9em; /* Smaller paragraph font size */
+        font-size: 0.9em; 
     }
 
     .card-buttons {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        flex-direction: column; 
     }
 
     .card-btn {
-        width: 100%; /* Make buttons take full width */
+        width: 100%; 
         text-align: center;
         padding: 8px 10px;
     }
@@ -142,11 +142,11 @@
     }
 
     .card-content h3 {
-        font-size: 1em; /* Smaller heading font size */
+        font-size: .9em; /* Smaller heading font size */
     }
 
     .card-content p {
-        font-size: 0.85em; /* Smaller paragraph font size */
+        font-size: 0.8em; /* Smaller paragraph font size */
     }
    
 } 

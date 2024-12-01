@@ -80,7 +80,7 @@
       font-weight: 100;
     }
     .countup {
-      font-size: 1.5rem; /* Increased size for counting numbers */
+      font-size: 1.3rem; /* Increased size for counting numbers */
       font-weight: 600px;
     }
     .milestone-card {
@@ -89,12 +89,12 @@
       
       padding: 5px;
       border-radius: 12px;
-      width: 25%; /* Fixed width for cards */
+      width: 18vw; /* Fixed width for cards */
       margin: 10px;
     }
     .milestone-icon {
       font-size: 1.5rem; /* Icon size */
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       color: #ffd700; /* Gold color for icons */
     }
     .milestone-cards{
