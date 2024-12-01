@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import "../Styles/TripDetails.css"; // Import your CSS file
 
 const TripDetails = () => {
-  const { title } = useParams(); // Assuming the route includes the title as a parameter
+  const { title } = useParams(); // Get the trip title from the URL parameter
 
-  // Map the title to the corresponding environment variables
+  // Map the trip titles to their corresponding environment variables
   const tripData = {
     MEESHAPPULIMALA: {
       title: import.meta.env.VITE_MEESHAPPULIMALA_TITLE,
@@ -56,14 +56,20 @@ const TripDetails = () => {
 
   return (
     <div className="trip-details">
-        <div style={{marginTop:"70px"}}></div>
+      <div style={{ marginTop: "70px" }}></div>
+
       {/* Title */}
       <h1 className="trip-title">{trip.title}</h1>
 
       {/* Images */}
       <div className="trip-images">
         {trip.images.map((image, index) => (
-          <img key={index} src={image} alt={`${trip.title} ${index + 1}`} />
+          <img
+            key={index}
+            src={image}
+            alt={`${trip.title} ${index + 1}`}
+            className="trip-image"
+          />
         ))}
       </div>
 
@@ -88,22 +94,24 @@ const TripDetails = () => {
       {/* Detailed Itinerary */}
       <div className="trip-itinerary">
         <h3>Detailed Itinerary</h3>
-        <table>
+        <table className="itinerary-table">
           <thead>
             <tr>
               <th>Day</th>
-              <th>Location</th>
-              <th>Food</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
             {trip.itinerary.map((entry, index) => {
-              const [day, location, food] = entry.split("-");
+              const [day, details] = entry.split("-");
               return (
                 <tr key={index}>
-                  <td>{day}</td>
-                  <td>{location}</td>
-                  <td>{food}</td>
+                  <td>{day.trim()}</td>
+                  <td>
+                    {details.split("\n").map((point, pointIndex) => (
+                      <p key={pointIndex}>{point.trim()}</p>
+                    ))}
+                  </td>
                 </tr>
               );
             })}
