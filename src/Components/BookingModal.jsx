@@ -26,13 +26,12 @@ export default function BookingModal({ tripTitle }) {
   const [selectedDate, setSelectedDate] = useState("");
   const [availableSlots, setAvailableSlots] = useState(0);
   const [numTravelers, setNumTravelers] = useState("");
+  const [idType, setIdType] = useState("");
+  const [idNumber, setIdNumber] = useState("");
 
-  
   const dates = import.meta.env[`VITE_${tripTitle}_DATES`]?.split(";") || [];
   const slots = import.meta.env[`VITE_${tripTitle}_SLOTS`]?.split(";").map(Number) || [];
   console.log(dates)
-  console.log(slots)
-  console.log(tripTitle)
   // Handle modal open/close
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -48,6 +47,29 @@ export default function BookingModal({ tripTitle }) {
   const handleTravelersChange = (event) => {
     const value = parseInt(event.target.value, 10);
     setNumTravelers(Math.min(Math.max(value, 1), 6)); // Limit between 1 and 6
+  };
+
+  // Handle ID type selection
+  const handleIdTypeChange = (event) => {
+    setIdType(event.target.value);
+    setIdNumber(""); // Clear ID number when ID type changes
+  };
+
+  // Handle ID number input
+  const handleIdNumberChange = (event) => {
+    setIdNumber(event.target.value);
+  };
+
+  // Save the details to session
+  const saveToSession = () => {
+    sessionStorage.setItem("bookingDetails", JSON.stringify({
+      tripTitle,
+      selectedDate,
+      availableSlots,
+      numTravelers,
+      idType,
+      idNumber,
+    }));
   };
 
   return (
@@ -77,6 +99,7 @@ export default function BookingModal({ tripTitle }) {
                 onChange={handleDateChange}
                 variant="outlined"
                 size="small"
+                // disabled={availableSlots <= 0}
               >
                 {dates.map((date, index) => (
                   <MenuItem key={index} value={date}>
@@ -96,22 +119,88 @@ export default function BookingModal({ tripTitle }) {
             )}
 
             {/* Input field for number of travelers */}
-            <Grid item xs={12}>
-              <Typography>Number of Travelers</Typography>
-              <TextField
-                type="number"
-                fullWidth
-                value={numTravelers}
-                onChange={handleTravelersChange}
-                variant="outlined"
-                size="small"
-                inputProps={{
-                  min: 1,
-                  max: 6,
-                }}
-                placeholder="Enter number of travelers (1–6)"
-              />
-            </Grid>
+            {selectedDate && availableSlots > 0 && (
+              <Grid item xs={12}>
+                <Typography>Number of Travelers</Typography>
+                <TextField
+                  type="number"
+                  fullWidth
+                  value={numTravelers}
+                  onChange={handleTravelersChange}
+                  variant="outlined"
+                  size="small"
+                  inputProps={{
+                    min: 1,
+                    max: 6,
+                  }}
+                  placeholder="Enter number of travelers (1–6)"
+                  required
+                />
+              </Grid>
+            )}
+
+            {/* Name, Phone, and ID selection */}
+            {selectedDate && availableSlots > 0 && (
+              <>
+                <Grid item xs={12}>
+                  <Typography>Name</Typography>
+                  <TextField
+                    type="text"
+                    fullWidth
+                    variant="outlined"
+                    size="small"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Typography>Phone Number</Typography>
+                  <TextField
+                    type="number"
+                    fullWidth
+                    variant="outlined"
+                    size="small"
+                    placeholder="Enter contact number"
+                    required
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Typography>ID Type</Typography>
+                  <TextField
+                    select
+                    fullWidth
+                    value={idType}
+                    onChange={handleIdTypeChange}
+                    variant="outlined"
+                    size="small"
+                    required
+                  >
+                    <MenuItem value="Adhar">Adhar</MenuItem>
+                    <MenuItem value="Voter Id">Voter Id</MenuItem>
+                    <MenuItem value="Driving License">Driving License</MenuItem>
+                  </TextField>
+                </Grid>
+
+                {/* ID number field (enabled only if an ID type is selected) */}
+                {idType && (
+                  <Grid item xs={12}>
+                    <Typography>ID Number</Typography>
+                    <TextField
+                      type="number"
+                      fullWidth
+                      value={idNumber}
+                      onChange={handleIdNumberChange}
+                      variant="outlined"
+                      size="small"
+                      placeholder="Enter ID Number"
+                      required
+                    />
+                  </Grid>
+                )}
+              </>
+            )}
 
             {/* Button to confirm booking */}
             <Grid item xs={12}>
@@ -120,19 +209,19 @@ export default function BookingModal({ tripTitle }) {
                 color="primary"
                 fullWidth
                 onClick={() => {
-                  if (selectedDate && numTravelers) {
+                  if (selectedDate && numTravelers && idType && idNumber) {
+                    saveToSession();
                     alert(
                       `Booking confirmed for ${numTravelers} travelers on ${selectedDate}.`
                     );
                     handleClose();
                   } else {
-                    alert("Please select a date and specify the number of travelers.");
+                    alert("Please fill all the required fields.");
                   }
                 }}
               >
                 Confirm Booking
               </Button>
-              
             </Grid>
           </Grid>
         </Box>
