@@ -1,19 +1,21 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "../Styles/TripDetails.css"; // Import your CSS file
+import BookingModal from "./BookingModal";
 
 const TripDetails = () => {
   const { title } = useParams(); // Get the trip title from the URL parameter
 
   // Map the trip titles to their corresponding environment variables
   const tripData = {
-    MEESHAPPULIMALA: {
-      title: import.meta.env.VITE_MEESHAPPULIMALA_TITLE,
-      images: import.meta.env.VITE_MEESHAPPULIMALA_IMAGES.split(","),
-      fees: import.meta.env.VITE_MEESHAPPULIMALA_AMOUNT,
-      description: import.meta.env.VITE_MEESHAPPULIMALA_DESCRIPTION,
-      summary: import.meta.env.VITE_MEESHAPPULIMALA_SUMMARY,
-      itinerary: import.meta.env.VITE_MEESHAPPULIMALA_ITINERARY.split(";"),
+    MEESHAPULIMALA: {
+      title: import.meta.env.VITE_MEESHAPULIMALA_TITLE,
+      images: import.meta.env.VITE_MEESHAPULIMALA_IMAGES.split(","),
+      fees: import.meta.env.VITE_MEESHAPULIMALA_AMOUNT,
+      // slots:import.meta.env.VITE_MEESHAPPULIMALA_SLOTS,
+      description: import.meta.env.VITE_MEESHAPULIMALA_DESCRIPTION,
+      summary: import.meta.env.VITE_MEESHAPULIMALA_SUMMARY,
+      itinerary: import.meta.env.VITE_MEESHAPULIMALA_ITINERARY.split(";"),
     },
     GAVI: {
       title: import.meta.env.VITE_GAVI_TITLE,
@@ -76,7 +78,8 @@ const TripDetails = () => {
       {/* Trip Fees and Book Button */}
       <div className="trip-fees">
         <h2>Trip Fee: ${trip.fees}</h2>
-        <button className="book-now-button">Book Now</button>
+        <BookingModal tripTitle={trip.title} />
+        {/* <button className="book-now-button">Book Now</button> */}
       </div>
 
       {/* Description */}
