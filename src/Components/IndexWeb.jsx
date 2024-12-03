@@ -8,6 +8,7 @@ import AboutDetail from './AboutDetail';
 import GalleryDetails from './GalleryDetails'
 import TripDetails from './TripDetails';
 import UpcomingTrips from './UpcomingTrips'
+import RazorpayPayment from './RazorpayPayment';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/Gallery-details" element={<GalleryDetails/>} />
             <Route path="/trip-details/:title" element={<TripDetails/>} />
             <Route path="/trips" element={<UpcomingTrips/>} />
+            <Route path="/payment" element={<RazorpayPayment />} />
           </Routes>
         </div>
         <section id="footer">

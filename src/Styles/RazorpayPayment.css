@@ -1,0 +1,146 @@
+/* Container styles */
+.container-razor {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    
+  }
+  
+  /* Heading styles */
+  .heading-razor {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  /* Detail section */
+.details-razor {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .detail-item {
+    margin: 8px 0;
+  }
+  
+  .detail-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #00796b;
+  }
+  
+  .detail-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #004d40;
+    margin-left: 10px;
+  }
+  
+  /* Amount box styling */
+  .amountBox-razor {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Label inside amount box */
+  .label-razor{
+    font-size: 18px;
+    font-weight: 500;
+    color: #00796b;
+  }
+  
+  /* Amount styling */
+  .amount-razor {
+    font-size: 18px;
+    font-weight: 700;
+    color: #004d40;
+  }
+  
+  /* Button styling */
+  .button-razor {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  /* Button disabled state */
+  .button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .heading {
+      font-size: 20px;
+    }
+  
+    .amountBox {
+      padding: 8px 15px;
+    }
+  
+    .label {
+      font-size: 16px;
+    }
+  
+    .amount {
+      font-size: 16px;
+    }
+  
+    button {
+      padding: 12px;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .heading {
+      font-size: 18px;
+    }
+  
+    .amountBox {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .label {
+      font-size: 14px;
+    }
+  
+    .amount {
+      font-size: 16px;
+    }
+  
+    button {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -28,9 +29,11 @@ export default function BookingModal({ tripTitle }) {
   const [numTravelers, setNumTravelers] = useState("");
   const [idType, setIdType] = useState("");
   const [idNumber, setIdNumber] = useState("");
+    const navigate = useNavigate(); // Initialize navigate
 
   const dates = import.meta.env[`VITE_${tripTitle}_DATES`]?.split(";") || [];
   const slots = import.meta.env[`VITE_${tripTitle}_SLOTS`]?.split(";").map(Number) || [];
+  const rate =import.meta.env[`VITE_${tripTitle}_AMOUNT`]
   console.log(dates)
   // Handle modal open/close
   const handleOpen = () => setOpen(true);
@@ -62,6 +65,7 @@ export default function BookingModal({ tripTitle }) {
 
   // Save the details to session
   const saveToSession = () => {
+    const total = rate * numTravelers; // Calculate total amount
     sessionStorage.setItem("bookingDetails", JSON.stringify({
       tripTitle,
       selectedDate,
@@ -69,6 +73,7 @@ export default function BookingModal({ tripTitle }) {
       numTravelers,
       idType,
       idNumber,
+      total, // Save total amount
     }));
   };
 
@@ -211,10 +216,7 @@ export default function BookingModal({ tripTitle }) {
                 onClick={() => {
                   if (selectedDate && numTravelers && idType && idNumber) {
                     saveToSession();
-                    alert(
-                      `Booking confirmed for ${numTravelers} travelers on ${selectedDate}.`
-                    );
-                    handleClose();
+                    navigate("/payment"); // Redirect to RazorpayPayment component
                   } else {
                     alert("Please fill all the required fields.");
                   }
