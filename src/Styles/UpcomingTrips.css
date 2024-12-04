@@ -1,15 +1,39 @@
-.card-container-div{
-    padding-left:20%;
-    padding-right:20%;
-    /* background: linear-gradient(
-        360deg,
-        rgba(255, 247, 1, 0.501),
-        rgba(199, 182, 28, 0.362),
-        rgba(0, 0, 0, 0)
-    ); */
-    background-color:transparent;
+.card-container-div {
+    padding-left: 20%;
+    padding-right: 20%;
     padding-bottom: 30px;
-}
+    background-color: transparent;
+    position: relative; /* For the pseudo-element positioning */
+    background-image: url("/Images/boat-4899802_1280.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 1; /* Ensure content is above pseudo-element */
+  }
+  
+  .card-container-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:inherit; 
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: blur(8px); /* Apply the blur effect */
+    z-index: -1; /* Make sure the overlay is behind the content */
+  }
+  
+  .card-container-div .content {
+    position: relative;
+    z-index: 1; /* Keep content above the blurred background */
+    color: white; /* Ensure text visibility on top of the blurred background */
+  }
+  
 
 
 .card-container {

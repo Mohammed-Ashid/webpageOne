@@ -49,6 +49,7 @@ function GalleryPreview() {
 
   return (
     <div className="companies-section">
+        <div className="upcomingHeading">Gallery</div>
       <Slider {...sliderSettings} className="companies-slider">
         {GalleryData.map((company, index) => (
           <Box className="company-logo" key={index}>
@@ -61,7 +62,8 @@ function GalleryPreview() {
           </Box>
         ))}
       </Slider>
-      <button onClick={handleMoreButtonClick}>more</button>
+      <div className="button-div-gallery">
+      <button onClick={handleMoreButtonClick}>more</button></div>
     </div>
   );
 }

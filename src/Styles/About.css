@@ -1,23 +1,38 @@
 .about-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 70vh;
     overflow: hidden;
     padding: 0 10px;
     margin: 0;
     position: relative;
-    background: linear-gradient(135deg, white, #f4f4f4); /* Soft background gradient */
+    z-index: 1; 
+    background-image: url("/Images/pexels-punttim-67517.jpg");
+    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center;
+}
+.about-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.375); /* Light black filter */
+    z-index: -1; /* Places the overlay behind the content */
 }
 
 .about-content {
     width: 35vw;
     max-width: 700px; /* Max width for larger screens */
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    background: rgba(0, 0, 0, 0.441); /* Semi-transparent white background */
     border-radius: 12px; /* Rounded corners for a modern look */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    color: #333;
+    color: #ffffff;
 }
 
 .about-content h2 {
@@ -33,7 +48,7 @@
     font-size: 1.1em;
     line-height: 1.8;
     margin-bottom: 1.5em;
-    color: #555;
+    color: #ffffff;
     text-align: justify;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

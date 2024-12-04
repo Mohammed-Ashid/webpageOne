@@ -34,6 +34,7 @@ function Gallery() {
 
   return (
     <div className="card-container-div">
+      <div className="upcomingHeading">UPCOMING TRIPS</div>
       <div className="card-container">
         {cards.map((card, index) => (
           <Card

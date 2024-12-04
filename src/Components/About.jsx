@@ -12,6 +12,7 @@ const About = () => {
 
   return (
     <div className="about-container">
+      <h4 className="upcomingHeading">ABOUT US</h4>
       <div className="about-content">
         {/* <h2>Welcome to My Profile!</h2> */}
         <p>

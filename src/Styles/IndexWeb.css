@@ -1,21 +1,23 @@
   .main{
     background-color: #f4f4f4;
+    overflow: hidden;
   }
-    .upcomingHeading{
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: rgb(70, 66, 66);
-        font-size:3rem;
-        width: 100%;
-        text-align: center;
-        
-       
-    }
+  .upcomingHeading{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size:3rem;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    
+   
+}
     
     
     @media (max-width: 768px) { /* For tablets and smaller screens */
         .secondDiv {
             height: auto; /* Allow height to adjust based on content */
-            padding: 10px; /* Adjust padding for smaller screens */
+            padding: 10px; 
             width: 100%;
             text-align: center;
         }
