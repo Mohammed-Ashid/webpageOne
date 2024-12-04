@@ -21,9 +21,9 @@ function Navigation() {
           <li><Link to="/#home">Home</Link></li>
           <li> <Link to="/#about">About</Link></li>
           <li><Link to="/#gallery">Gallery</Link></li>
-          <li><Link to="/trips">Trip</Link></li>
+          {/* <li><Link to="/trips">Trip</Link></li> */}
           <li><Link to="/#upcoming-trips">Upcoming Trips</Link></li>
-          <li><Link to="/#blog">Blog</Link></li>
+          {/* <li><Link to="/#blog">Blog</Link></li> */}
           <li><Link to="/#contact">Contact Us</Link></li>
         </ul>
         <button className="explore-button">

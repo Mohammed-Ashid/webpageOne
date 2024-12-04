@@ -1,24 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/About.css';
 
 const About = () => {
-  const [inView, setInView] = useState(false);
-  const aboutRef = useRef(null);
   const navigate = useNavigate();
-
-  const handleScroll = () => {
-    const rect = aboutRef.current.getBoundingClientRect();
-    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-      setInView(true);
-      window.removeEventListener('scroll', handleScroll);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleReadMoreClick = () => {
     navigate('/about-detail'); // Navigate to AboutDetail.jsx
@@ -26,21 +11,21 @@ const About = () => {
   };
 
   return (
-    <div className={`about-container ${inView ? 'fade-in' : ''}`} ref={aboutRef}>
+    <div className="about-container">
       <div className="about-content">
-        
+        {/* <h2>Welcome to My Profile!</h2> */}
         <p>
-          Welcome to my profile! With a background in [Your Field/Expertise], I have a deep passion
-          for [something related to your expertise or field]. I believe in continuous learning and
-          growth, constantly working to improve my skills and contribute effectively to any project I
-          undertake.
+          I'm a passionate professional with a background in [Your Field/Expertise]. With a focus on
+          [specific area or skill], I aim to contribute my skills towards innovative and impactful
+          projects. Throughout my career, I've continuously refined my expertise in [mention your
+          strengths or areas of expertise].
         </p>
         <p>
-          My experience spans across [mention relevant fields or skills], and I've successfully
-          delivered [mention notable achievements or projects]. I'm excited to bring my knowledge and
-          experience to new challenges and make a meaningful impact.
+          My experience spans across [mention relevant fields or technologies]. I've had the privilege
+          of working on [highlight significant achievements or projects], and I'm eager to apply my
+          knowledge to solve new challenges.
         </p>
-        <button className="AboutButton" onClick={handleReadMoreClick}>
+        <button className="about-button" onClick={handleReadMoreClick}>
           Read More
         </button>
       </div>

@@ -34,41 +34,39 @@
     display: flex;
     align-items: center;
   }
-  .companies-section button{
+  .companies-section button {
     background-color: black;
-    color:white;
+    color: white;
     border-radius: 50px;
-    width: 85px;
-    height:30px;
+    width: 85px; /* Default size for larger screens */
+    height: 30px;
     font-size: medium;
+    padding: 5px 10px; /* Add padding for better scaling */
+    border: 2px solid black; /* Add border for better contrast */
+    transition: all 0.3s ease; /* Smooth transition for hover and resizing */
   }
-  .companies-section button:hover{
+  
+  .companies-section button:hover {
     background-color: transparent;
-    color:black;
-   
+    color: black;
+    border-color: black; /* Ensure the border changes with hover */
   }
   
   /* Responsive adjustments */
-  @media screen and (max-width: 1024px) {
-    .company-image {
-      max-height: 150px; /* Reduce size for medium screens */
-    }
-  }
-  
   @media screen and (max-width: 768px) {
-    .company-image {
-      
-      max-height: 500px; /* Further reduce size for smaller screens */
+    .companies-section button {
+      width: 70px; /* Reduce width for smaller screens */
+      height: 25px;
+      font-size: small; /* Adjust font size */
     }
   }
   
   @media screen and (max-width: 480px) {
-    .company-image {
-      max-height: 300px; /* Adapt size for mobile devices */
-    }
-  
-    .companies-section {
-      padding: 10px; /* Reduce padding for smaller screens */
+    .companies-section button {
+      width: 60px; /* Further reduce width for mobile screens */
+      height: 20px;
+      font-size: x-small; /* Adjust font size for very small screens */
+      border-radius: 30px; /* Keep rounded edges */
     }
   }
   

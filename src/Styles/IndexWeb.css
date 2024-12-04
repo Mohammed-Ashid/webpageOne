@@ -11,6 +11,7 @@
        
     }
     
+    
     @media (max-width: 768px) { /* For tablets and smaller screens */
         .secondDiv {
             height: auto; /* Allow height to adjust based on content */

@@ -53,7 +53,7 @@ function Primary() {
               </section>
 
               {/* Milestones Section */}
-              <section id="milestones">
+              <section id="milestones" >
                 <Milestone />
               </section>
 

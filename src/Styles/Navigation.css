@@ -106,6 +106,8 @@ html {
       flex-direction: column;
       background-color: #fff;
       width: 100%;
+      border-radius: 25px;
+    
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
@@ -118,6 +120,7 @@ html {
     .nav-links.open {
       max-height: 400px; /* Adjust based on content */
       padding: 10px 0;
+      
     }
   
     .nav-links a {
@@ -130,6 +133,7 @@ html {
       display: block;
       color: #333;
       height: auto;
+      
     }
   
     /* Hide logo and explore button if needed */
