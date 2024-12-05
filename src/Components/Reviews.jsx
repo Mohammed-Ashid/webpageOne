@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReviewComponent from './ReviewComponent';
-import '../Styles/Reviews.css';
+import '../Styles/ReviewsMain.css'
 
 function Reviews() {
   // Load reviews from environment variables
