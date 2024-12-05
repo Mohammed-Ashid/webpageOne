@@ -38,11 +38,7 @@ function GalleryPreview() {
           slidesToShow: 1, // Show 1 slide on mobile
           slidesToScroll: 1,
         },
-        breakpoint: 480, // Screen width less than or equal to 768px
-        settings: {
-          slidesToShow: 1, // Show 1 slide on mobile
-          slidesToScroll: 1,
-        },
+
       },
     ],
   };

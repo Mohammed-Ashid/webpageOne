@@ -25,6 +25,7 @@ function Navigation() {
           <li><Link to="/#upcoming-trips">Upcoming Trips</Link></li>
           {/* <li><Link to="/#blog">Blog</Link></li> */}
           <li><Link to="/#contact">Contact Us</Link></li>
+          <li></li>
         </ul>
         <button className="explore-button">
           <svg

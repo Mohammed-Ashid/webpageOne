@@ -41,14 +41,14 @@ const Milestone = () => {
         <div className="milestone-card">
           <FaPlane className="milestone-icon" />
           <h3>Trips</h3>
-          <CountUp start={0} end={startCounting ? 120 : 0} duration={10} suffix="+" className="countup" />
+          <CountUp start={0} end={startCounting ? 120 : 0} duration={5} suffix="+" className="countup" />
         </div>
 
         {/* Travellers Milestone */}
         <div className="milestone-card">
           <FaUserFriends className="milestone-icon" />
           <h3>Travellers</h3>
-          <CountUp start={0} end={startCounting ? 1500 : 0} duration={10} suffix="+" className="countup" />
+          <CountUp start={0} end={startCounting ? 1500 : 0} duration={5} suffix="+" className="countup" />
         </div>
 
         {/* Locations Milestone */}
