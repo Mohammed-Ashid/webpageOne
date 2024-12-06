@@ -17,7 +17,7 @@ const About = () => {
         {/* <h2>Welcome to My Profile!</h2> */}
         <p>
           I'm a passionate professional with a background in [Your Field/Expertise]. With a focus on
-          [specific area or skill], I aim to contribute my skills towards innovative and impactful
+          [specific area or skill], I aimm to contribute my skills towards innovative and impactful
           projects. Throughout my career, I've continuously refined my expertise in [mention your
           strengths or areas of expertise].
         </p>
